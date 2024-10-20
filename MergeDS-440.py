@@ -1,22 +1,31 @@
-import pandas as pd
 import os
+import subprocess
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Step 1: Set the path to your Downloads folder
 downloads_path = os.path.expanduser('~/Downloads/')  # This works for both Mac and Linux
 
-# Step 2: Load the datasets
+# Step 2: Download the datasets using Kaggle API
+try:
+    subprocess.run(['kaggle', 'datasets', 'download', '-d', 'patricklford/global-ev-sales-2010-2024'], check=True)
+    subprocess.run(['kaggle', 'datasets', 'download', '-d', 'ulrikthygepedersen/co2-emissions-by-country'], check=True)
+except subprocess.CalledProcessError as e:
+    print(f"Error downloading datasets: {e}")
+    exit()
+
+# Unzip the downloaded datasets
+os.system(f'unzip -o {downloads_path}global-ev-sales-2010-2024.zip -d {downloads_path}')
+os.system(f'unzip -o {downloads_path}co2-emissions-by-country.zip -d {downloads_path}')
+
+# Step 3: Load the datasets
 try:
     ev_sales_data = pd.read_csv(os.path.join(downloads_path, 'IEA Global EV Data 2024.csv'))
     emissions_data = pd.read_csv(os.path.join(downloads_path, 'co2_emissions_kt_by_country.csv'))
 except FileNotFoundError as e:
     print(f"Error: {e}")
     exit()
-
-# Step 3: Check columns
-print("EV Sales Data Columns:", ev_sales_data.columns)
-print("Emissions Data Columns:", emissions_data.columns)
 
 # Step 4: Filter for China in EV sales data
 ev_sales_china = ev_sales_data[ev_sales_data['region'] == 'China']
