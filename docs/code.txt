@@ -1,0 +1,70 @@
+import pandas as pd
+import folium
+import json
+
+csv_file_path = 'EV_Data_Vehicles_Only.csv'
+ev_data = pd.read_csv(csv_file_path)
+
+ev_data_cleaned = ev_data.groupby('region')['value'].sum().reset_index()
+
+geojson_file_path = 'countries.geo.json'
+with open(geojson_file_path) as f:
+    geojson_data = json.load(f)
+
+
+m_hover = folium.Map(location=[0, 0], zoom_start=2)
+
+def style_function(feature):
+    country_name = feature['properties']['name']
+    if country_name in ev_data_cleaned['region'].values:
+        return {
+            'fillColor': '#2c7fb8',  # Color for countries with data
+            'color': 'black',
+            'fillOpacity': 0.7,
+            'weight': 1
+        }
+    else:
+        return {
+            'fillColor': 'grey',  # Grey out countries without data
+            'color': 'black',
+            'fillOpacity': 0.5,
+            'weight': 0.5
+        }
+
+
+for feature in geojson_data['features']:
+    country_name = feature['properties']['name']
+    if country_name in ev_data_cleaned['region'].values:
+        ev_value = ev_data_cleaned[ev_data_cleaned['region'] == country_name]['value'].values[0]
+        folium.GeoJson(
+            feature,
+            style_function=style_function,
+            tooltip=folium.Tooltip(f"Country: {country_name}<br>EV Count: {ev_value}")
+        ).add_to(m_hover)
+    else:
+        folium.GeoJson(
+            feature,
+            style_function=style_function,
+            tooltip=folium.Tooltip(f"Country: {country_name}<br>EV Count: No Data")
+        ).add_to(m_hover)
+
+
+m_hover.save('interactive_ev_map_fixed_hover_ev_count.html')
+
+m_expanded_scale = folium.Map(location=[0, 0], zoom_start=2)
+
+
+choropleth = folium.Choropleth(
+    geo_data=geojson_data,
+    name="choropleth",
+    data=ev_data_cleaned,
+    columns=["region", "value"],
+    key_on="feature.properties.name",
+    fill_color="YlGnBu", 
+    fill_opacity=0.7,
+    line_opacity=0.2,
+    threshold_scale=[0, 10000, 50000, 200000, 500000, ev_data_cleaned['value'].max()],
+    legend_name="EV Data by Country"
+).add_to(m_expanded_scale)
+
+m_expanded_scale.save('interactive_ev_map_final.html')
