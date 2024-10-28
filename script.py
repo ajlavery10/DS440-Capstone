@@ -2,12 +2,12 @@ import pandas as pd
 import os
 
 # Define directory paths
-input_dir = "datasets/"   # Folder containing .xlsx files
-output_dir = "csv_files/" # Folder to save converted .csv files
+input_dir = "Datasets/"   # Folder containing .xlsx files
+output_dir = "CSV/" # Folder to save converted .csv files
 os.makedirs(output_dir, exist_ok=True)  # Create output directory if it doesn't exist
 
 # List of .xlsx file names
-xlsx_files = ["file1.xlsx", "file2.xlsx", "file3.xlsx"]
+xlsx_files = ["China_CO2_Inventory_1997-2021_(Apparent_Emissions).xlsx", "County-level_CO2_Emissions_in_China_during_1997–2017.xlsx"]
 csv_files = []
 
 # Convert each .xlsx to .csv and store filenames
