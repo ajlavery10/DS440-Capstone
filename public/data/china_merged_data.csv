@@ -1,0 +1,326 @@
+country_code,country_name,year,value_x,region,category,parameter,mode,powertrain,unit,value_y
+CHN,China,2010,8474919.921875,China,Historical,Electricity demand,Buses,EV,GWh,150.0
+CHN,China,2010,8474919.921875,China,Historical,Electricity demand,Vans,EV,GWh,3.0
+CHN,China,2010,8474919.921875,China,Historical,Electricity demand,Cars,EV,GWh,46.0
+CHN,China,2010,8474919.921875,China,Historical,EV sales,Cars,BEV,Vehicles,1100.0
+CHN,China,2010,8474919.921875,China,Historical,EV sales,Vans,BEV,Vehicles,120.0
+CHN,China,2010,8474919.921875,China,Historical,EV stock,Vans,BEV,Vehicles,400.0
+CHN,China,2010,8474919.921875,China,Historical,EV sales,Buses,BEV,Vehicles,970.0
+CHN,China,2010,8474919.921875,China,Historical,EV stock,Buses,BEV,Vehicles,1900.0
+CHN,China,2010,8474919.921875,China,Historical,EV sales share,Buses,EV,percent,0.189999997615814
+CHN,China,2010,8474919.921875,China,Historical,EV stock,Cars,BEV,Vehicles,1600.0
+CHN,China,2010,8474919.921875,China,Historical,EV sales,Cars,PHEV,Vehicles,340.0
+CHN,China,2010,8474919.921875,China,Historical,EV stock,Cars,PHEV,Vehicles,340.0
+CHN,China,2010,8474919.921875,China,Historical,EV stock,Trucks,BEV,Vehicles,16.0
+CHN,China,2010,8474919.921875,China,Historical,EV stock share,Buses,EV,percent,0.054999999701977
+CHN,China,2010,8474919.921875,China,Historical,EV sales share,Vans,EV,percent,0.009999999776483
+CHN,China,2010,8474919.921875,China,Historical,EV stock share,Vans,EV,percent,0.005499999970198
+CHN,China,2010,8474919.921875,China,Historical,EV sales share,Cars,EV,percent,0.009999999776483
+CHN,China,2010,8474919.921875,China,Historical,EV stock share,Cars,EV,percent,0.003100000089034
+CHN,China,2010,8474919.921875,China,Historical,EV stock share,Trucks,EV,percent,0.000110000000859
+CHN,China,2010,8474919.921875,China,Historical,Oil displacement Mbd,Buses,EV,Milion barrels per day,0.000230000005104
+CHN,China,2010,8474919.921875,China,Historical,Oil displacement Mbd,Vans,EV,Milion barrels per day,9.99999974737875e-06
+CHN,China,2010,8474919.921875,China,Historical,Oil displacement Mbd,Cars,EV,Milion barrels per day,2.90000007225899e-05
+CHN,China,2010,8474919.921875,China,Historical,"Oil displacement, million lge",Buses,EV,"Oil displacement, million lge",14.0
+CHN,China,2010,8474919.921875,China,Historical,"Oil displacement, million lge",Vans,EV,"Oil displacement, million lge",0.620000004768372
+CHN,China,2010,8474919.921875,China,Historical,"Oil displacement, million lge",Cars,EV,"Oil displacement, million lge",1.70000004768372
+CHN,China,2011,9282549.8046875,China,Historical,Oil displacement Mbd,Buses,EV,Milion barrels per day,0.000239999993937
+CHN,China,2011,9282549.8046875,China,Historical,Oil displacement Mbd,Vans,EV,Milion barrels per day,1.29999998534913e-05
+CHN,China,2011,9282549.8046875,China,Historical,Oil displacement Mbd,Cars,EV,Milion barrels per day,0.000110000000859
+CHN,China,2011,9282549.8046875,China,Historical,"Oil displacement, million lge",Buses,EV,"Oil displacement, million lge",15.0
+CHN,China,2011,9282549.8046875,China,Historical,"Oil displacement, million lge",Vans,EV,"Oil displacement, million lge",0.810000002384186
+CHN,China,2011,9282549.8046875,China,Historical,"Oil displacement, million lge",Cars,EV,"Oil displacement, million lge",6.69999980926514
+CHN,China,2011,9282549.8046875,China,Historical,EV stock share,Trucks,EV,percent,0.000769999984186
+CHN,China,2011,9282549.8046875,China,Historical,EV stock share,Cars,EV,percent,0.009200000204146
+CHN,China,2011,9282549.8046875,China,Historical,EV sales share,Cars,EV,percent,0.034000001847744
+CHN,China,2011,9282549.8046875,China,Historical,EV stock share,Vans,EV,percent,0.008899999782443
+CHN,China,2011,9282549.8046875,China,Historical,EV sales share,Vans,EV,percent,0.016000000759959
+CHN,China,2011,9282549.8046875,China,Historical,EV stock share,Buses,EV,percent,0.119999997317791
+CHN,China,2011,9282549.8046875,China,Historical,EV sales share,Buses,EV,percent,0.529999971389771
+CHN,China,2011,9282549.8046875,China,Historical,EV stock,Trucks,BEV,Vehicles,120.0
+CHN,China,2011,9282549.8046875,China,Historical,EV stock,Cars,PHEV,Vehicles,660.0
+CHN,China,2011,9282549.8046875,China,Historical,EV sales,Cars,PHEV,Vehicles,320.0
+CHN,China,2011,9282549.8046875,China,Historical,EV stock,Cars,BEV,Vehicles,6300.0
+CHN,China,2011,9282549.8046875,China,Historical,EV stock,Buses,BEV,Vehicles,4100.0
+CHN,China,2011,9282549.8046875,China,Historical,EV sales,Buses,PHEV,Vehicles,160.0
+CHN,China,2011,9282549.8046875,China,Historical,EV sales,Buses,BEV,Vehicles,440.0
+CHN,China,2011,9282549.8046875,China,Historical,EV stock,Vans,BEV,Vehicles,700.0
+CHN,China,2011,9282549.8046875,China,Historical,EV sales,Vans,BEV,Vehicles,150.0
+CHN,China,2011,9282549.8046875,China,Historical,EV stock,Buses,PHEV,Vehicles,160.0
+CHN,China,2011,9282549.8046875,China,Historical,EV sales,Cars,BEV,Vehicles,4800.0
+CHN,China,2011,9282549.8046875,China,Historical,Electricity demand,Buses,EV,GWh,110.0
+CHN,China,2011,9282549.8046875,China,Historical,Electricity demand,Vans,EV,GWh,2.5
+CHN,China,2011,9282549.8046875,China,Historical,Electricity demand,Cars,EV,GWh,120.0
+CHN,China,2012,9541870.1171875,China,Historical,Electricity demand,Buses,EV,GWh,140.0
+CHN,China,2012,9541870.1171875,China,Historical,Electricity demand,Vans,EV,GWh,4.0
+CHN,China,2012,9541870.1171875,China,Historical,Electricity demand,Cars,EV,GWh,230.0
+CHN,China,2012,9541870.1171875,China,Historical,EV sales,Cars,BEV,Vehicles,9600.0
+CHN,China,2012,9541870.1171875,China,Historical,EV stock,Buses,PHEV,Vehicles,680.0
+CHN,China,2012,9541870.1171875,China,Historical,EV sales,Vans,BEV,Vehicles,670.0
+CHN,China,2012,9541870.1171875,China,Historical,EV stock,Vans,BEV,Vehicles,1200.0
+CHN,China,2012,9541870.1171875,China,Historical,EV sales,Buses,BEV,Vehicles,1400.0
+CHN,China,2012,9541870.1171875,China,Historical,EV sales,Buses,PHEV,Vehicles,510.0
+CHN,China,2012,9541870.1171875,China,Historical,EV stock,Buses,BEV,Vehicles,5900.0
+CHN,China,2012,9541870.1171875,China,Historical,EV stock,Cars,BEV,Vehicles,16000.0
+CHN,China,2012,9541870.1171875,China,Historical,EV sales,Cars,PHEV,Vehicles,260.0
+CHN,China,2012,9541870.1171875,China,Historical,EV stock,Cars,PHEV,Vehicles,920.0
+CHN,China,2012,9541870.1171875,China,Historical,EV stock,Trucks,BEV,Vehicles,540.0
+CHN,China,2012,9541870.1171875,China,Historical,EV sales share,Buses,EV,percent,1.29999995231628
+CHN,China,2012,9541870.1171875,China,Historical,EV stock share,Buses,EV,percent,0.189999997615814
+CHN,China,2012,9541870.1171875,China,Historical,EV sales share,Vans,EV,percent,0.072999998927116
+CHN,China,2012,9541870.1171875,China,Historical,EV stock share,Vans,EV,percent,0.014000000432134
+CHN,China,2012,9541870.1171875,China,Historical,EV sales share,Cars,EV,percent,0.072999998927116
+CHN,China,2012,9541870.1171875,China,Historical,EV stock share,Cars,EV,percent,0.018999999389052
+CHN,China,2012,9541870.1171875,China,Historical,EV stock share,Trucks,EV,percent,0.003199999919161
+CHN,China,2012,9541870.1171875,China,Historical,Oil displacement Mbd,Buses,EV,Milion barrels per day,0.000399999989895
+CHN,China,2012,9541870.1171875,China,Historical,Oil displacement Mbd,Vans,EV,Milion barrels per day,2.99999992421362e-05
+CHN,China,2012,9541870.1171875,China,Historical,Oil displacement Mbd,Cars,EV,Milion barrels per day,0.000269999989541
+CHN,China,2012,9541870.1171875,China,Historical,"Oil displacement, million lge",Buses,EV,"Oil displacement, million lge",24.0
+CHN,China,2012,9541870.1171875,China,Historical,"Oil displacement, million lge",Vans,EV,"Oil displacement, million lge",1.79999995231628
+CHN,China,2012,9541870.1171875,China,Historical,"Oil displacement, million lge",Cars,EV,"Oil displacement, million lge",16.0
+CHN,China,2013,9984570.3125,China,Historical,Oil displacement Mbd,Buses,EV,Milion barrels per day,0.000609999988228
+CHN,China,2013,9984570.3125,China,Historical,Oil displacement Mbd,Vans,EV,Milion barrels per day,4.70000013592653e-05
+CHN,China,2013,9984570.3125,China,Historical,Oil displacement Mbd,Cars,EV,Milion barrels per day,0.00054999999702
+CHN,China,2013,9984570.3125,China,Historical,"Oil displacement, million lge",Buses,EV,"Oil displacement, million lge",37.0
+CHN,China,2013,9984570.3125,China,Historical,"Oil displacement, million lge",Vans,EV,"Oil displacement, million lge",2.79999995231628
+CHN,China,2013,9984570.3125,China,Historical,"Oil displacement, million lge",Cars,EV,"Oil displacement, million lge",33.0
+CHN,China,2013,9984570.3125,China,Historical,EV stock share,Trucks,EV,percent,0.00760000012815
+CHN,China,2013,9984570.3125,China,Historical,EV stock share,Cars,EV,percent,0.030999999493361
+CHN,China,2013,9984570.3125,China,Historical,EV sales share,Cars,EV,percent,0.094999998807907
+CHN,China,2013,9984570.3125,China,Historical,EV stock share,Vans,EV,percent,0.019999999552965
+CHN,China,2013,9984570.3125,China,Historical,EV sales share,Vans,EV,percent,0.07599999755621
+CHN,China,2013,9984570.3125,China,Historical,EV stock share,Buses,EV,percent,0.28999999165535
+CHN,China,2013,9984570.3125,China,Historical,EV sales share,Buses,EV,percent,2.59999990463257
+CHN,China,2013,9984570.3125,China,Historical,EV stock,Trucks,BEV,Vehicles,1400.0
+CHN,China,2013,9984570.3125,China,Historical,EV stock,Cars,PHEV,Vehicles,1600.0
+CHN,China,2013,9984570.3125,China,Historical,EV sales,Cars,PHEV,Vehicles,730.0
+CHN,China,2013,9984570.3125,China,Historical,EV stock,Cars,BEV,Vehicles,31000.0
+CHN,China,2013,9984570.3125,China,Historical,EV stock,Buses,BEV,Vehicles,7600.0
+CHN,China,2013,9984570.3125,China,Historical,EV sales,Buses,PHEV,Vehicles,1800.0
+CHN,China,2013,9984570.3125,China,Historical,EV sales,Buses,BEV,Vehicles,2000.0
+CHN,China,2013,9984570.3125,China,Historical,EV stock,Vans,BEV,Vehicles,1800.0
+CHN,China,2013,9984570.3125,China,Historical,EV sales,Vans,BEV,Vehicles,750.0
+CHN,China,2013,9984570.3125,China,Historical,EV stock,Buses,PHEV,Vehicles,2400.0
+CHN,China,2013,9984570.3125,China,Historical,EV sales,Cars,BEV,Vehicles,15000.0
+CHN,China,2013,9984570.3125,China,Historical,Electricity demand,Buses,EV,GWh,220.0
+CHN,China,2013,9984570.3125,China,Historical,Electricity demand,Vans,EV,GWh,6.0
+CHN,China,2013,9984570.3125,China,Historical,Electricity demand,Cars,EV,GWh,470.0
+CHN,China,2014,10006669.921875,China,Historical,Electricity demand,Buses,EV,GWh,460.0
+CHN,China,2014,10006669.921875,China,Historical,Electricity demand,Vans,EV,GWh,8.0
+CHN,China,2014,10006669.921875,China,Historical,Electricity demand,Cars,EV,GWh,660.0
+CHN,China,2014,10006669.921875,China,Historical,EV sales,Cars,BEV,Vehicles,49000.0
+CHN,China,2014,10006669.921875,China,Historical,EV stock,Buses,PHEV,Vehicles,8400.0
+CHN,China,2014,10006669.921875,China,Historical,EV sales,Buses,PHEV,Vehicles,6000.0
+CHN,China,2014,10006669.921875,China,Historical,EV sales,Vans,BEV,Vehicles,480.0
+CHN,China,2014,10006669.921875,China,Historical,EV stock,Vans,BEV,Vehicles,2500.0
+CHN,China,2014,10006669.921875,China,Historical,EV sales,Buses,BEV,Vehicles,4000.0
+CHN,China,2014,10006669.921875,China,Historical,EV stock,Buses,BEV,Vehicles,22000.0
+CHN,China,2014,10006669.921875,China,Historical,EV charging points,EV,Publicly available fast,charging points,9000.0
+CHN,China,2014,10006669.921875,China,Historical,EV charging points,EV,Publicly available slow,charging points,21000.0
+CHN,China,2014,10006669.921875,China,Historical,EV stock,Cars,BEV,Vehicles,59000.0
+CHN,China,2014,10006669.921875,China,Historical,EV sales,Cars,PHEV,Vehicles,24000.0
+CHN,China,2014,10006669.921875,China,Historical,EV stock,Cars,PHEV,Vehicles,26000.0
+CHN,China,2014,10006669.921875,China,Historical,EV stock,Trucks,BEV,Vehicles,1700.0
+CHN,China,2014,10006669.921875,China,Historical,EV sales share,Buses,EV,percent,8.0
+CHN,China,2014,10006669.921875,China,Historical,EV stock share,Buses,EV,percent,0.889999985694885
+CHN,China,2014,10006669.921875,China,Historical,EV sales share,Vans,EV,percent,0.045000001788139
+CHN,China,2014,10006669.921875,China,Historical,EV stock share,Vans,EV,percent,0.025000000372529
+CHN,China,2014,10006669.921875,China,Historical,EV sales share,Cars,EV,percent,0.400000005960465
+CHN,China,2014,10006669.921875,China,Historical,EV stock share,Cars,EV,percent,0.070000000298023
+CHN,China,2014,10006669.921875,China,Historical,EV stock share,Trucks,EV,percent,0.00870000012219
+CHN,China,2014,10006669.921875,China,Historical,Oil displacement Mbd,Buses,EV,Milion barrels per day,0.00109999999404
+CHN,China,2014,10006669.921875,China,Historical,Oil displacement Mbd,Vans,EV,Milion barrels per day,5.40000000910368e-05
+CHN,China,2014,10006669.921875,China,Historical,Oil displacement Mbd,Cars,EV,Milion barrels per day,0.001300000003539
+CHN,China,2014,10006669.921875,China,Historical,"Oil displacement, million lge",Buses,EV,"Oil displacement, million lge",63.0
+CHN,China,2014,10006669.921875,China,Historical,"Oil displacement, million lge",Vans,EV,"Oil displacement, million lge",3.20000004768372
+CHN,China,2014,10006669.921875,China,Historical,"Oil displacement, million lge",Cars,EV,"Oil displacement, million lge",81.0
+CHN,China,2015,9861099.609375,China,Historical,Oil displacement Mbd,Buses,EV,Milion barrels per day,0.005499999970198
+CHN,China,2015,9861099.609375,China,Historical,Oil displacement Mbd,Trucks,EV,Milion barrels per day,0.002000000094995
+CHN,China,2015,9861099.609375,China,Historical,Oil displacement Mbd,Vans,EV,Milion barrels per day,0.00044999999227
+CHN,China,2015,9861099.609375,China,Historical,Oil displacement Mbd,Cars,EV,Milion barrels per day,0.004100000020117
+CHN,China,2015,9861099.609375,China,Historical,"Oil displacement, million lge",Buses,EV,"Oil displacement, million lge",330.0
+CHN,China,2015,9861099.609375,China,Historical,"Oil displacement, million lge",Trucks,EV,"Oil displacement, million lge",120.0
+CHN,China,2015,9861099.609375,China,Historical,"Oil displacement, million lge",Vans,EV,"Oil displacement, million lge",27.0
+CHN,China,2015,9861099.609375,China,Historical,"Oil displacement, million lge",Cars,EV,"Oil displacement, million lge",240.0
+CHN,China,2015,9861099.609375,China,Historical,EV stock share,Trucks,EV,percent,0.08500000089407
+CHN,China,2015,9861099.609375,China,Historical,EV stock share,Cars,EV,percent,0.209999993443489
+CHN,China,2015,9861099.609375,China,Historical,EV sales share,Trucks,EV,percent,1.5
+CHN,China,2015,9861099.609375,China,Historical,EV sales share,Cars,EV,percent,1.0
+CHN,China,2015,9861099.609375,China,Historical,EV stock share,Vans,EV,percent,0.140000000596046
+CHN,China,2015,9861099.609375,China,Historical,EV sales share,Vans,EV,percent,1.39999997615814
+CHN,China,2015,9861099.609375,China,Historical,EV stock share,Buses,EV,percent,3.59999990463257
+CHN,China,2015,9861099.609375,China,Historical,EV sales share,Buses,EV,percent,38.0
+CHN,China,2015,9861099.609375,China,Historical,EV stock,Trucks,BEV,Vehicles,17000.0
+CHN,China,2015,9861099.609375,China,Historical,EV stock,Cars,PHEV,Vehicles,87000.0
+CHN,China,2015,9861099.609375,China,Historical,EV sales,Trucks,BEV,Vehicles,17000.0
+CHN,China,2015,9861099.609375,China,Historical,EV sales,Cars,PHEV,Vehicles,61000.0
+CHN,China,2015,9861099.609375,China,Historical,EV stock,Cars,BEV,Vehicles,210000.0
+CHN,China,2015,9861099.609375,China,Historical,EV charging points,EV,Publicly available fast,charging points,12000.0
+CHN,China,2015,9861099.609375,China,Historical,EV charging points,EV,Publicly available slow,charging points,47000.0
+CHN,China,2015,9861099.609375,China,Historical,EV stock,Buses,BEV,Vehicles,98000.0
+CHN,China,2015,9861099.609375,China,Historical,EV sales,Buses,BEV,Vehicles,43000.0
+CHN,China,2015,9861099.609375,China,Historical,EV stock,Vans,BEV,Vehicles,15000.0
+CHN,China,2015,9861099.609375,China,Historical,EV sales,Vans,BEV,Vehicles,15000.0
+CHN,China,2015,9861099.609375,China,Historical,EV sales,Buses,PHEV,Vehicles,13000.0
+CHN,China,2015,9861099.609375,China,Historical,EV stock,Buses,PHEV,Vehicles,22000.0
+CHN,China,2015,9861099.609375,China,Historical,EV sales,Cars,BEV,Vehicles,150000.0
+CHN,China,2015,9861099.609375,China,Historical,EV stock,Vans,PHEV,Vehicles,17.0
+CHN,China,2015,9861099.609375,China,Historical,Electricity demand,Buses,EV,GWh,3400.0
+CHN,China,2015,9861099.609375,China,Historical,Electricity demand,Trucks,EV,GWh,910.0
+CHN,China,2015,9861099.609375,China,Historical,Electricity demand,Vans,EV,GWh,93.0
+CHN,China,2015,9861099.609375,China,Historical,Electricity demand,Cars,EV,GWh,1600.0
+CHN,China,2016,9874660.15625,China,Historical,Electricity demand,Buses,EV,GWh,6300.0
+CHN,China,2016,9874660.15625,China,Historical,Electricity demand,Trucks,EV,GWh,2800.0
+CHN,China,2016,9874660.15625,China,Historical,Electricity demand,Vans,EV,GWh,120.0
+CHN,China,2016,9874660.15625,China,Historical,Electricity demand,Cars,EV,GWh,2400.0
+CHN,China,2016,9874660.15625,China,Historical,EV stock,Vans,PHEV,Vehicles,17.0
+CHN,China,2016,9874660.15625,China,Historical,EV sales,Cars,BEV,Vehicles,260000.0
+CHN,China,2016,9874660.15625,China,Historical,EV stock,Buses,PHEV,Vehicles,29000.0
+CHN,China,2016,9874660.15625,China,Historical,EV sales,Buses,PHEV,Vehicles,7600.0
+CHN,China,2016,9874660.15625,China,Historical,EV sales,Vans,BEV,Vehicles,11000.0
+CHN,China,2016,9874660.15625,China,Historical,EV stock,Vans,BEV,Vehicles,53000.0
+CHN,China,2016,9874660.15625,China,Historical,EV sales,Buses,BEV,Vehicles,76000.0
+CHN,China,2016,9874660.15625,China,Historical,EV stock,Buses,BEV,Vehicles,190000.0
+CHN,China,2016,9874660.15625,China,Historical,EV stock,Buses,FCEV,Vehicles,1.0
+CHN,China,2016,9874660.15625,China,Historical,EV charging points,EV,Publicly available fast,charging points,55000.0
+CHN,China,2016,9874660.15625,China,Historical,EV charging points,EV,Publicly available slow,charging points,86000.0
+CHN,China,2016,9874660.15625,China,Historical,EV stock,Cars,BEV,Vehicles,460000.0
+CHN,China,2016,9874660.15625,China,Historical,EV sales,Cars,PHEV,Vehicles,79000.0
+CHN,China,2016,9874660.15625,China,Historical,EV sales,Trucks,BEV,Vehicles,46000.0
+CHN,China,2016,9874660.15625,China,Historical,EV stock,Cars,PHEV,Vehicles,170000.0
+CHN,China,2016,9874660.15625,China,Historical,EV stock,Trucks,BEV,Vehicles,64000.0
+CHN,China,2016,9874660.15625,China,Historical,EV sales share,Buses,EV,percent,53.0
+CHN,China,2016,9874660.15625,China,Historical,EV stock share,Buses,EV,percent,6.59999990463257
+CHN,China,2016,9874660.15625,China,Historical,EV sales share,Vans,EV,percent,0.879999995231628
+CHN,China,2016,9874660.15625,China,Historical,EV stock share,Vans,EV,percent,0.469999998807907
+CHN,China,2016,9874660.15625,China,Historical,EV sales share,Cars,EV,percent,1.5
+CHN,China,2016,9874660.15625,China,Historical,EV sales share,Trucks,EV,percent,3.20000004768372
+CHN,China,2016,9874660.15625,China,Historical,EV stock share,Cars,EV,percent,0.389999985694885
+CHN,China,2016,9874660.15625,China,Historical,EV stock share,Trucks,EV,percent,0.300000011920929
+CHN,China,2016,9874660.15625,China,Historical,Oil displacement Mbd,Buses,EV,Milion barrels per day,0.010999999940395
+CHN,China,2016,9874660.15625,China,Historical,Oil displacement Mbd,Trucks,EV,Milion barrels per day,0.006899999920279
+CHN,China,2016,9874660.15625,China,Historical,Oil displacement Mbd,Vans,EV,Milion barrels per day,0.000639999983832
+CHN,China,2016,9874660.15625,China,Historical,Oil displacement Mbd,Cars,EV,Milion barrels per day,0.008200000040233
+CHN,China,2016,9874660.15625,China,Historical,"Oil displacement, million lge",Buses,EV,"Oil displacement, million lge",670.0
+CHN,China,2016,9874660.15625,China,Historical,"Oil displacement, million lge",Trucks,EV,"Oil displacement, million lge",410.0
+CHN,China,2016,9874660.15625,China,Historical,"Oil displacement, million lge",Vans,EV,"Oil displacement, million lge",38.0
+CHN,China,2016,9874660.15625,China,Historical,"Oil displacement, million lge",Cars,EV,"Oil displacement, million lge",490.0
+CHN,China,2017,10096009.765625,China,Historical,Oil displacement Mbd,Buses,EV,Milion barrels per day,0.023000000044704
+CHN,China,2017,10096009.765625,China,Historical,Oil displacement Mbd,Trucks,EV,Milion barrels per day,0.012000000104308
+CHN,China,2017,10096009.765625,China,Historical,Oil displacement Mbd,Vans,EV,Milion barrels per day,0.003199999919161
+CHN,China,2017,10096009.765625,China,Historical,Oil displacement Mbd,Cars,EV,Milion barrels per day,0.014999999664724
+CHN,China,2017,10096009.765625,China,Historical,"Oil displacement, million lge",Buses,EV,"Oil displacement, million lge",1300.0
+CHN,China,2017,10096009.765625,China,Historical,"Oil displacement, million lge",Trucks,EV,"Oil displacement, million lge",730.0
+CHN,China,2017,10096009.765625,China,Historical,"Oil displacement, million lge",Vans,EV,"Oil displacement, million lge",190.0
+CHN,China,2017,10096009.765625,China,Historical,"Oil displacement, million lge",Cars,EV,"Oil displacement, million lge",920.0
+CHN,China,2017,10096009.765625,China,Historical,EV stock share,Trucks,EV,percent,0.589999973773956
+CHN,China,2017,10096009.765625,China,Historical,EV stock share,Cars,EV,percent,0.660000026226044
+CHN,China,2017,10096009.765625,China,Historical,EV sales share,Trucks,EV,percent,3.70000004768372
+CHN,China,2017,10096009.765625,China,Historical,EV sales share,Cars,EV,percent,2.40000009536743
+CHN,China,2017,10096009.765625,China,Historical,EV stock share,Vans,EV,percent,0.97000002861023
+CHN,China,2017,10096009.765625,China,Historical,EV sales share,Vans,EV,percent,4.90000009536743
+CHN,China,2017,10096009.765625,China,Historical,EV stock share,Buses,EV,percent,9.39999961853027
+CHN,China,2017,10096009.765625,China,Historical,EV sales share,Buses,EV,percent,60.0
+CHN,China,2017,10096009.765625,China,Historical,EV stock,Trucks,BEV,Vehicles,130000.0
+CHN,China,2017,10096009.765625,China,Historical,EV stock,Trucks,FCEV,Vehicles,1.0
+CHN,China,2017,10096009.765625,China,Historical,EV stock,Cars,PHEV,Vehicles,280000.0
+CHN,China,2017,10096009.765625,China,Historical,EV sales,Trucks,BEV,Vehicles,71000.0
+CHN,China,2017,10096009.765625,China,Historical,EV sales,Cars,PHEV,Vehicles,110000.0
+CHN,China,2017,10096009.765625,China,Historical,EV stock,Cars,BEV,Vehicles,930000.0
+CHN,China,2017,10096009.765625,China,Historical,EV sales,Cars,BEV,Vehicles,470000.0
+CHN,China,2017,10096009.765625,China,Historical,EV charging points,EV,Publicly available fast,charging points,83000.0
+CHN,China,2017,10096009.765625,China,Historical,EV charging points,EV,Publicly available slow,charging points,130000.0
+CHN,China,2017,10096009.765625,China,Historical,EV stock,Buses,FCEV,Vehicles,340.0
+CHN,China,2017,10096009.765625,China,Historical,EV stock,Buses,BEV,Vehicles,280000.0
+CHN,China,2017,10096009.765625,China,Historical,EV sales,Buses,FCEV,Vehicles,380.0
+CHN,China,2017,10096009.765625,China,Historical,EV sales,Buses,BEV,Vehicles,88000.0
+CHN,China,2017,10096009.765625,China,Historical,EV stock,Vans,BEV,Vehicles,120000.0
+CHN,China,2017,10096009.765625,China,Historical,EV sales,Vans,BEV,Vehicles,68000.0
+CHN,China,2017,10096009.765625,China,Historical,EV sales,Buses,PHEV,Vehicles,240.0
+CHN,China,2017,10096009.765625,China,Historical,EV stock,Buses,PHEV,Vehicles,30000.0
+CHN,China,2017,10096009.765625,China,Historical,EV stock,Vans,PHEV,Vehicles,17.0
+CHN,China,2017,10096009.765625,China,Historical,Electricity demand,Buses,EV,GWh,11000.0
+CHN,China,2017,10096009.765625,China,Historical,Electricity demand,Trucks,EV,GWh,4200.0
+CHN,China,2017,10096009.765625,China,Historical,Electricity demand,Vans,EV,GWh,540.0
+CHN,China,2017,10096009.765625,China,Historical,Electricity demand,Cars,EV,GWh,3400.0
+CHN,China,2018,10502929.6875,China,Historical,Electricity demand,Buses,EV,GWh,15000.0
+CHN,China,2018,10502929.6875,China,Historical,Electricity demand,Trucks,EV,GWh,5400.0
+CHN,China,2018,10502929.6875,China,Historical,Electricity demand,Vans,EV,GWh,490.0
+CHN,China,2018,10502929.6875,China,Historical,Electricity demand,Cars,EV,GWh,6200.0
+CHN,China,2018,10502929.6875,China,Historical,EV stock,Vans,PHEV,Vehicles,17.0
+CHN,China,2018,10502929.6875,China,Historical,EV stock,Buses,PHEV,Vehicles,31000.0
+CHN,China,2018,10502929.6875,China,Historical,EV sales,Buses,PHEV,Vehicles,1200.0
+CHN,China,2018,10502929.6875,China,Historical,EV sales,Vans,BEV,Vehicles,54000.0
+CHN,China,2018,10502929.6875,China,Historical,EV stock,Vans,BEV,Vehicles,200000.0
+CHN,China,2018,10502929.6875,China,Historical,EV sales,Buses,BEV,Vehicles,83000.0
+CHN,China,2018,10502929.6875,China,Historical,EV sales,Buses,FCEV,Vehicles,890.0
+CHN,China,2018,10502929.6875,China,Historical,EV stock,Buses,BEV,Vehicles,360000.0
+CHN,China,2018,10502929.6875,China,Historical,EV stock,Buses,FCEV,Vehicles,1200.0
+CHN,China,2018,10502929.6875,China,Historical,EV charging points,EV,Publicly available fast,charging points,110000.0
+CHN,China,2018,10502929.6875,China,Historical,EV charging points,EV,Publicly available slow,charging points,160000.0
+CHN,China,2018,10502929.6875,China,Historical,EV sales,Cars,BEV,Vehicles,820000.0
+CHN,China,2018,10502929.6875,China,Historical,EV stock,Cars,BEV,Vehicles,1700000.0
+CHN,China,2018,10502929.6875,China,Historical,EV sales,Cars,PHEV,Vehicles,270000.0
+CHN,China,2018,10502929.6875,China,Historical,EV sales,Trucks,BEV,Vehicles,36000.0
+CHN,China,2018,10502929.6875,China,Historical,EV stock,Cars,PHEV,Vehicles,540000.0
+CHN,China,2018,10502929.6875,China,Historical,EV stock,Trucks,FCEV,Vehicles,400.0
+CHN,China,2018,10502929.6875,China,Historical,EV stock,Trucks,BEV,Vehicles,170000.0
+CHN,China,2018,10502929.6875,China,Historical,EV sales,Trucks,FCEV,Vehicles,400.0
+CHN,China,2018,10502929.6875,China,Historical,EV sales share,Buses,EV,percent,64.0
+CHN,China,2018,10502929.6875,China,Historical,EV stock share,Buses,EV,percent,12.0
+CHN,China,2018,10502929.6875,China,Historical,EV sales share,Vans,EV,percent,3.5
+CHN,China,2018,10502929.6875,China,Historical,EV stock share,Vans,EV,percent,1.5
+CHN,China,2018,10502929.6875,China,Historical,EV sales share,Cars,EV,percent,4.69999980926514
+CHN,China,2018,10502929.6875,China,Historical,EV sales share,Trucks,EV,percent,1.89999997615814
+CHN,China,2018,10502929.6875,China,Historical,EV stock share,Cars,EV,percent,1.10000002384186
+CHN,China,2018,10502929.6875,China,Historical,EV stock share,Trucks,EV,percent,0.709999978542328
+CHN,China,2018,10502929.6875,China,Historical,Oil displacement Mbd,Buses,EV,Milion barrels per day,0.030999999493361
+CHN,China,2018,10502929.6875,China,Historical,Oil displacement Mbd,Trucks,EV,Milion barrels per day,0.016000000759959
+CHN,China,2018,10502929.6875,China,Historical,Oil displacement Mbd,Vans,EV,Milion barrels per day,0.00289999996312
+CHN,China,2018,10502929.6875,China,Historical,Oil displacement Mbd,Cars,EV,Milion barrels per day,0.029999999329448
+CHN,China,2018,10502929.6875,China,Historical,"Oil displacement, million lge",Buses,EV,"Oil displacement, million lge",1900.0
+CHN,China,2018,10502929.6875,China,Historical,"Oil displacement, million lge",Trucks,EV,"Oil displacement, million lge",950.0
+CHN,China,2018,10502929.6875,China,Historical,"Oil displacement, million lge",Vans,EV,"Oil displacement, million lge",170.0
+CHN,China,2018,10502929.6875,China,Historical,"Oil displacement, million lge",Cars,EV,"Oil displacement, million lge",1800.0
+CHN,China,2019,10707219.7265625,China,Historical,Oil displacement Mbd,Buses,EV,Milion barrels per day,0.032000001519919
+CHN,China,2019,10707219.7265625,China,Historical,Oil displacement Mbd,Trucks,EV,Milion barrels per day,0.014999999664724
+CHN,China,2019,10707219.7265625,China,Historical,Oil displacement Mbd,Vans,EV,Milion barrels per day,0.003100000089034
+CHN,China,2019,10707219.7265625,China,Historical,Oil displacement Mbd,Cars,EV,Milion barrels per day,0.043000001460314
+CHN,China,2019,10707219.7265625,China,Historical,"Oil displacement, million lge",Buses,EV,"Oil displacement, million lge",1900.0
+CHN,China,2019,10707219.7265625,China,Historical,"Oil displacement, million lge",Trucks,EV,"Oil displacement, million lge",880.0
+CHN,China,2019,10707219.7265625,China,Historical,"Oil displacement, million lge",Vans,EV,"Oil displacement, million lge",190.0
+CHN,China,2019,10707219.7265625,China,Historical,"Oil displacement, million lge",Cars,EV,"Oil displacement, million lge",2600.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock share,Trucks,EV,percent,0.759999990463257
+CHN,China,2019,10707219.7265625,China,Historical,EV stock share,Cars,EV,percent,1.5
+CHN,China,2019,10707219.7265625,China,Historical,EV sales share,Trucks,EV,percent,1.20000004768372
+CHN,China,2019,10707219.7265625,China,Historical,EV sales share,Cars,EV,percent,5.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock share,Vans,EV,percent,1.70000004768372
+CHN,China,2019,10707219.7265625,China,Historical,EV sales share,Vans,EV,percent,1.60000002384186
+CHN,China,2019,10707219.7265625,China,Historical,EV stock share,Buses,EV,percent,15.0
+CHN,China,2019,10707219.7265625,China,Historical,EV sales share,Buses,EV,percent,61.0
+CHN,China,2019,10707219.7265625,China,Historical,EV sales,Trucks,FCEV,Vehicles,2000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock,Trucks,BEV,Vehicles,190000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock,Trucks,FCEV,Vehicles,1800.0
+CHN,China,2019,10707219.7265625,China,Historical,EV sales,Trucks,PHEV,Vehicles,31.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock,Trucks,PHEV,Vehicles,31.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock,Cars,PHEV,Vehicles,770000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV sales,Trucks,BEV,Vehicles,24000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV sales,Cars,PHEV,Vehicles,230000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock,Cars,BEV,Vehicles,2600000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV sales,Cars,BEV,Vehicles,830000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV charging points,EV,Publicly available fast,charging points,210000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV charging points,EV,Publicly available slow,charging points,300000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock,Buses,FCEV,Vehicles,2300.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock,Buses,BEV,Vehicles,430000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV sales,Buses,FCEV,Vehicles,1100.0
+CHN,China,2019,10707219.7265625,China,Historical,EV sales,Buses,BEV,Vehicles,68000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock,Vans,BEV,Vehicles,250000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV sales,Vans,BEV,Vehicles,27000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV sales,Buses,PHEV,Vehicles,1300.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock,Buses,PHEV,Vehicles,32000.0
+CHN,China,2019,10707219.7265625,China,Historical,EV stock,Vans,PHEV,Vehicles,44.0
+CHN,China,2019,10707219.7265625,China,Historical,EV sales,Vans,PHEV,Vehicles,27.0
+CHN,China,2019,10707219.7265625,China,Historical,Electricity demand,Buses,EV,GWh,15000.0
+CHN,China,2019,10707219.7265625,China,Historical,Electricity demand,Trucks,EV,GWh,4800.0
+CHN,China,2019,10707219.7265625,China,Historical,Electricity demand,Vans,EV,GWh,500.0
+CHN,China,2019,10707219.7265625,China,Historical,Electricity demand,Cars,EV,GWh,8400.0
