@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "capstoneds440",
+  "private_key_id": "d503bb881d26aa0fd728f9405ab5693bfc0e47f9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/xnP32sY3hxKt\nPfYvR+kWLH/oW783g2+OeAbcn1c0FbXmoVTVetRKWAMWnBBWuJaPDjhuvy+aFvl6\nZxTFYBItMzGRSslVAgDYBQhVEyox+1zQHIIkT+/MXVHhTzrMRSW+av4s18q/GFkt\n2pxUUtJGaHhZrpDkpcgcW3FjXRO+ornGdCEBVxq6Pc3Z5kQxpZmDGvgTxKgWftdc\n4AFfsMRNYZPWipXHhqSZDeV1qMdYMD6ya/PiLrQFSnvYBxJuFNF43RYz+IDidPF/\nXISbVOPwuEuh3T7upJofwPSUpZZ+L4zVpt0CR1L5sXY+H9ABnOhxbei3Fzq2lT/x\npTNWgZRJAgMBAAECggEAHS0xeBBID2skr4hJg+x+HRJEnIKW3ziHOKbwrlCsuP8j\nl1TMvhTrpurof2BbiQIY3+djNRAvyxL7PkDgE15YLZnIDQmSg3UkUTlEyQK7LPMH\n7h6kOyeRPWemPS/ra2gKw8Nt678h+LxY1wXXOmoGVVFwG/7Xyv2g6hWMdPhUeHBv\n7l4cJMCQSjjD6OoTiIeoqElPcVfJ7zvsexOeyiRIVGxUPF+yRUVgHcvqk6lyA83E\nduqQUNJlJ01+FzfeKsoMEGqNldo5/17KsU7qr+IusEgcRLeTtykdmOhaSibQQpiz\nbekA06E9wsvJSg7WY9VXk92CQ8lbe8t8xNrx38vOrQKBgQD81n4Qy0F+WeGzuZFf\ntZS64mj6WnQsevRImcPJz+8wPnBbUA32ZG11gDptGxKXVwLV5sgVAzNKK1wo/Xo9\nF5Ni9Sjf+Ielaj92hxvYWH2hpAjJGHGasOsZhI8oNGQuhb8mEgn1TZT8OHM53TDC\nV6pzIKH53AhQehJt69tzP160DQKBgQDCLHUDeTnUtoy26BwjmQQcWHwht2iSYXyw\nBjP9O9xlj9iwyelO2gCfSUy/7XeIiEkMUmbNhiWx0EKx2+fSiq2l4j46cgFZB/nC\nKgpOVXizwJg1Xkiq2k79MAjL6488bYS96lbP+of6T4oq8wJPoA5lIo20whlTYoRv\nsOaVgiomLQKBgDTakdfo5XQITgpIDH+5cbHvioprRkXWHiLfIfKaKSIoq0wrW//Z\n1pftikksk6JXahxU9haOaLZkggt/kYIb34+cOEM5rQGDSGj6rXN4bCrSI5QGLBlu\nSnc3IsYAzcB77Q2ET9ibsz1Wf5/lAUBfGx6d/74/pO1N13RrDaD16lIxAoGAKroH\noZUKUbE9s33Nu1OPYQFjhzPJkfRbsIwc4otKixqlDvnPGefEnUhO2CjT1bpPgKOd\nNXpgTwlJs8N09pJHdaocEVZGz6V+ougHTodmQP+PPqcZjGbvXK02MlEKOrzKqdOn\n+KnjRAQ+ngbNKmJI6J462lyfoAacp8sgYiO7TJ0CgYEAkpIhoLL/BFD0n4saAPvK\nFvvSX8lWlBbeIZ6hjzyyYW0vP6ZrNS/FOQB/fGOkHzTnq/u0CBLtPhqgAuuuWrbw\n2nLKKIzshplp4DX8GpV2RMSwwvqcn4OVWarKK9AnxJ3wV9585KO8rK9S2KuGV4SQ\ngt+aKbWatHkvIDdJONCbX0k=\n-----END PRIVATE KEY-----\n",
+  "client_email": "nlp-sentiment-analysis@capstoneds440.iam.gserviceaccount.com",
+  "client_id": "101112980315850239846",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nlp-sentiment-analysis%40capstoneds440.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

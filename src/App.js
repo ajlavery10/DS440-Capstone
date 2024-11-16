@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import 'leaflet/dist/leaflet.css';
 import * as d3 from 'd3';
+import SentimentAnalysis from './SentimentAnalysis.js';
+
 
 function App() {
   const [co2EmissionsData, setCo2EmissionsData] = useState({});
@@ -14,10 +16,15 @@ function App() {
   const [secondSelectedCountry, setSecondSelectedCountry] = useState('Portugal');
   const [mapCenter, setMapCenter] = useState([20, 0]);
   const [geoData, setGeoData] = useState(null);
-  const [selectedYear, setSelectedYear] = useState(2019);
+  const [selectedYear, setSelectedYear] = useState(1960);
   const [showEvMap, setShowEvMap] = useState(false);
   const [evStockData, setEvStockData] = useState({});
   const [topEmitters, setTopEmitters] = useState([]);
+  const [activeTab, setActiveTab] = useState('dashboard'); // Default tab is "dashboard"
+  const [mapZoom, setMapZoom] = useState(2);
+  const [mapPosition, setMapPosition] = useState({ center: [20, 0], zoom: 2 });
+
+
 
   const countryNameMap = {
     "United States of America": "United States",
@@ -27,6 +34,31 @@ function App() {
   
 
   const normalizeCountryName = (name) => countryNameMap[name] || name;
+
+  const GOOGLE_API_KEY = 'AIzaSyBMs1W_4EbHRIILtWgTBuwPA3LBXzwG-iQ';
+
+  const zoomToCountry = async (country) => {
+    const normalizedCountry = normalizeCountryName(country);
+    try {
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${normalizedCountry}&key=${GOOGLE_API_KEY}`
+      );
+      const data = await response.json();
+
+      if (data.results.length > 0) {
+        const { lat, lng } = data.results[0].geometry.location;
+        console.log(`Zooming to ${normalizedCountry}:`, { lat, lng });
+        setMapPosition({ center: [lat, lng], zoom: 5 }); // Adjust zoom level for country focus.
+      } else {
+        console.error('Country not found:', country);
+      }
+    } catch (error) {
+      console.error('Error fetching geocode data:', error);
+    }
+  };
+
+
+  
 
   const validCountries = new Set([
     'Aruba', 'Afghanistan', 'Angola', 'Albania', 'Andorra', 'United Arab Emirates', 'Argentina', 'Armenia',
@@ -49,6 +81,35 @@ function App() {
   ]);
   
 
+
+  useEffect(() => {
+    if (selectedCountry || secondSelectedCountry) {
+      const zoomTo = async (country) => {
+        const normalizedCountry = normalizeCountryName(country);
+        try {
+          const response = await fetch(
+            `https://maps.googleapis.com/maps/api/geocode/json?address=${normalizedCountry}&key=${GOOGLE_API_KEY}`
+          );
+          const data = await response.json();
+  
+          if (data.results.length > 0) {
+            const { lat, lng } = data.results[0].geometry.location;
+            console.log(`Zooming to ${country}:`, { lat, lng });
+            setMapPosition({ center: [lat, lng], zoom: 5 });
+          } else {
+            console.error('Country not found:', country);
+          }
+        } catch (error) {
+          console.error('Error fetching geocode data:', error);
+        }
+      };
+  
+      // Zoom to the selected country or second country
+      if (selectedCountry) zoomTo(selectedCountry);
+      if (secondSelectedCountry) zoomTo(secondSelectedCountry);
+    }
+  }, [selectedCountry, secondSelectedCountry]);
+  
   // Load emissions data
   useEffect(() => {
     d3.csv('/data/co2_emissions_kt_by_country.csv').then(data => {
@@ -65,19 +126,22 @@ function App() {
 
   // Load EV stock data
   useEffect(() => {
-    d3.csv('/data/EV_Data_Vehicles_Only.csv').then(data => {
-      const parsedData = data.reduce((acc, item) => {
-        const countryName = normalizeCountryName(item.region);
-        if (item.parameter === "EV stock") {
-          const stock = +item.value;
-          if (!acc[countryName]) acc[countryName] = 0;
-          acc[countryName] += stock;
-        }
-        return acc;
-      }, {});
-      setEvStockData(parsedData);
-    }).catch(error => console.error("Error loading EV stock data:", error));
-  }, []);
+    d3.csv('/data/electric-car-sales-share.csv').then((data) => {
+        const parsedData = data.reduce((acc, item) => {
+            const countryName = normalizeCountryName(item.Entity);
+            const year = +item.Year;
+            const adoptionRate = +item['Share of new cars that are electric'];
+
+            if (!acc[countryName]) acc[countryName] = {};
+            acc[countryName][year] = adoptionRate;
+
+            return acc;
+        }, {});
+
+        setEvStockData(parsedData);
+    }).catch((error) => console.error('Error loading EV adoption data:', error));
+}, []);
+
 
   // Load GeoJSON data
   useEffect(() => {
@@ -161,35 +225,47 @@ function App() {
 
   // Define getCountryStyle function to style each country based on emissions or EV stock
   const getCountryStyle = (feature) => {
-    const countryName = normalizeCountryName(feature.properties.name);
+    const countryName = normalizeCountryName(feature.properties.name); // Normalize the country name
+    const evAdoptionRate = evStockData[countryName]?.[selectedYear] || 0; // Get EV adoption rate for the selected year
+
+    console.log(`Country: ${countryName}, EV Adoption Rate: ${evAdoptionRate}`); // Debugging EV adoption rate
+
     if (showEvMap) {
-      const evStock = evStockData[countryName] || 0;
-      const color = evStock ? getEvColor(evStock) : 'gray';
-      return {
-        fillColor: color,
-        weight: 1,
-        color: 'black',
-        fillOpacity: 0.7,
-      };
+        // EV Adoption Map Logic
+        const color = evAdoptionRate > 20 ? 'green' : // High adoption
+                      evAdoptionRate > 10 ? 'orange' : // Moderate adoption
+                      evAdoptionRate > 1 ? 'red' : // Low adoption
+                      'gray'; // No data or negligible adoption
+
+        return {
+            fillColor: color, // Color based on EV adoption rate
+            weight: 1, // Border width
+            color: 'black', // Border color
+            fillOpacity: 0.7, // Transparency of fill
+        };
     } else {
-      const emissionsData = co2EmissionsData[countryName] || [];
-      let emissions = 0;
-      if (selectedYear > 2019) {
-        const prediction = predictionData[countryName]?.find(d => d.year === selectedYear);
-        emissions = prediction ? prediction.emissions : 0;
-      } else {
-        const yearData = emissionsData.find(d => d.year === selectedYear);
-        emissions = yearData ? yearData.emissions : 0;
-      }
-      const color = emissions ? getAdjustedColor(emissions) : 'gray';
-      return {
-        fillColor: color,
-        weight: 1,
-        color: 'black',
-        fillOpacity: 0.7,
-      };
+        // CO2 Emissions Map Logic
+        const emissionsData = co2EmissionsData[countryName] || [];
+        let emissions = 0;
+
+        if (selectedYear > 2019) {
+            const prediction = predictionData[countryName]?.find(d => d.year === selectedYear);
+            emissions = prediction ? prediction.emissions : 0;
+        } else {
+            const yearData = emissionsData.find(d => d.year === selectedYear);
+            emissions = yearData ? yearData.emissions : 0;
+        }
+
+        const color = emissions ? getAdjustedColor(emissions) : 'gray'; // Map emissions to color
+        return {
+            fillColor: color, // Color based on emissions
+            weight: 1, // Border width
+            color: 'black', // Border color
+            fillOpacity: 0.7, // Transparency of fill
+        };
     }
-  };
+};
+
 
   const getAdjustedColor = (emissions) => {
     const adjustedEmissions = emissions * (1 - (evAdoptionRate * 0.003));
@@ -206,8 +282,18 @@ function App() {
     return `rgb(${redIntensity}, ${greenIntensity}, 0)`;
   };
 
-  const handleCountryChange = (event) => setSelectedCountry(event.target.value);
-  const handleSecondCountryChange = (event) => setSecondSelectedCountry(event.target.value);
+  const handleCountryChange = (event) => {
+    const newCountry = event.target.value;
+    setSelectedCountry(newCountry);
+    zoomToCountry(newCountry); // Fly/Zoom to the selected first country.
+  };
+  
+  const handleSecondCountryChange = (event) => {
+    const newCountry = event.target.value;
+    setSecondSelectedCountry(newCountry);
+    zoomToCountry(newCountry); // Fly/Zoom to the selected second country.
+  };
+
   const handleYearChange = (event) => setSelectedYear(Number(event.target.value));
 
   const Legend = () => (
@@ -258,125 +344,200 @@ if (barChartData[0].emissions < barChartData[1].emissions) {
   barChartData[1].fill = '#ff4d4d';
 }
 
-  
+const MapWrapper = () => {
+  const map = useMap();
+
+  useEffect(() => {
+    if (mapPosition.center) {
+      console.log('Flying to position:', mapPosition);
+      map.flyTo(mapPosition.center, mapPosition.zoom, {
+        duration: 1.5,
+      });
+    }
+  }, [mapPosition]);
+
+  return null;
+};
+
+
 return (
-  <div style={{ textAlign: 'center', marginTop: '60px' }}> {/* Increase top margin for entire dashboard */}
-    <h2>CO2 Emissions and EV Adoption Dashboard</h2>
-    <button onClick={() => setShowEvMap(!showEvMap)}>
-      Toggle to {showEvMap ? 'CO2 Emissions' : 'EV Adoption'} Map
-    </button>
+  <div>
+    {/* Navigation Bar */}
+    <nav style={{ display: 'flex', justifyContent: 'center', padding: '10px', backgroundColor: '#f5f5f5' }}>
+      <button onClick={() => setActiveTab('dashboard')}>Dashboard</button>
+      <button onClick={() => setActiveTab('sentiment')}>Sentiment Analysis</button>
+    </nav>
 
-    {/* Adjust top margin for Map Container */}
-    <div style={{ display: 'flex', marginTop: '60px' }}> {/* Increase top margin for map and sidebar */}
-      {/* Map Container */}
-      <div style={{ flex: 1, padding: '10px', marginTop: '40px' }}> {/* Shift map down */}
-        <MapContainer style={{ height: '400px', width: '100%' }} center={mapCenter} zoom={2}>
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          {geoData && <GeoJSON data={geoData} style={getCountryStyle} />}
-        </MapContainer>
-        <Legend />
-      </div>
+    {/* Conditional Rendering Based on Active Tab */}
+    {activeTab === 'dashboard' && (
+      <div style={{ textAlign: 'center', marginTop: '60px' }}>
+        <h2>CO2 Emissions and EV Adoption Dashboard</h2>
+        <button onClick={() => {
+          if (!showEvMap) setSelectedYear(2023);
+          setShowEvMap(!showEvMap);
+        }}>
+          Toggle to {showEvMap ? 'CO2 Emissions' : 'EV Adoption'} Map
+        </button>
 
-      {/* Sidebar with Top 5 Emitters, Country Selectors, Sliders */}
-      <div style={{ flex: 1, padding: '10px', textAlign: 'left', marginTop: '40px' }}> {/* Shift sidebar down */}
-        {/* Top 5 Emitters Panel */}
-        <div style={{ backgroundColor: '#f5f5f5', padding: '15px', borderRadius: '8px', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)' }}>
-          <h3>Top 5 Emitters in {selectedYear}</h3>
-          <ul style={{ listStyleType: 'none', paddingLeft: '0' }}>
-            {topEmitters.map((emitter, index) => (
-              <li key={index} style={{ marginBottom: '10px', fontWeight: 'bold', fontSize: '16px' }}>
-                {index + 1}. {emitter.country}: {emitter.emissions.toLocaleString()} kt
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Country Selectors and Sliders */}
-        <div style={{ display: 'flex', alignItems: 'flex-start', marginTop: '20px' }}>
-          {/* Country Selectors */}
-          <div style={{ flex: 1 }}>
-            <p>Select First Country for Emissions Over Time:</p>
-            <select value={selectedCountry} onChange={handleCountryChange}>
-              {Object.keys(co2EmissionsData).map(country => (
-                <option key={country} value={country}>{country}</option>
-              ))}
-            </select>
-
-            <p style={{ marginTop: '10px' }}>Select Second Country for Emissions Over Time:</p>
-            <select value={secondSelectedCountry} onChange={handleSecondCountryChange}>
-              {Object.keys(co2EmissionsData).map(country => (
-                <option key={country} value={country}>{country}</option>
-              ))}
-            </select>
+        {/* Adjust top margin for Map Container */}
+        <div style={{ display: 'flex', marginTop: '60px' }}>
+          {/* Map Container */}
+          <div style={{ flex: 1, padding: '10px', marginTop: '40px' }} center = {mapCenter} zoom = {mapZoom}>
+            {/* Add dynamic title */}
+            <h3 style={{ textAlign: 'center', marginBottom: '10px' }}>
+              {showEvMap ? 'EV Adoption Map' : 'CO2 Emissions Map'}
+            </h3>
+            <MapContainer style={{ height: '400px', width: '100%' }} center={mapCenter} zoom={2}>
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              {geoData && <GeoJSON data={geoData} style={getCountryStyle} />}
+              <MapWrapper />
+            </MapContainer>
+            <Legend />
           </div>
 
-          {/* Sliders */}
-          <div style={{ flex: 1, marginLeft: '20px' }}>
-            <p>Adjust EV Adoption Rate: {evAdoptionRate}%</p>
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value={evAdoptionRate}
-              onChange={(e) => setEvAdoptionRate(Number(e.target.value))}
-              style={{ width: '100%' }}
-            />
+          {/* Sidebar with Top 5 Emitters, Country Selectors, Sliders */}
+          <div style={{ flex: 1, padding: '10px', textAlign: 'left', marginTop: '40px' }}>
+            {/* Top 5 Emitters Panel */}
+            <div
+              style={{
+                backgroundColor: '#f5f5f5',
+                padding: '15px',
+                borderRadius: '8px',
+                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+              }}
+            >
+              <h3>Top 5 Emitters in {selectedYear}</h3>
+              <ul style={{ listStyleType: 'none', paddingLeft: '0' }}>
+                {topEmitters.map((emitter, index) => (
+                  <li key={index} style={{ marginBottom: '10px', fontWeight: 'bold', fontSize: '16px' }}>
+                    {index + 1}. {emitter.country}: {emitter.emissions.toLocaleString()} kt
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-            <p style={{ marginTop: '10px' }}>Select Year: {selectedYear}</p>
-            <input
-              type="range"
-              min="1960"
-              max="2050"
-              value={selectedYear}
-              onChange={handleYearChange}
-              style={{ width: '100%' }}
-            />
+            {/* Country Selectors and Sliders */}
+            <div style={{ display: 'flex', alignItems: 'flex-start', marginTop: '20px' }}>
+              {/* Country Selectors */}
+              <div style={{ flex: 1 }}>
+                <p>Select First Country for Emissions Over Time:</p>
+                <select value={selectedCountry} onChange={handleCountryChange}>
+                  {Object.keys(co2EmissionsData).map((country) => (
+                    <option key={country} value={country}>
+                      {country}
+                    </option>
+                  ))}
+                </select>
+
+                <p style={{ marginTop: '10px' }}>Select Second Country for Emissions Over Time:</p>
+                <select value={secondSelectedCountry} onChange={handleSecondCountryChange}>
+                  {Object.keys(co2EmissionsData).map((country) => (
+                    <option key={country} value={country}>
+                      {country}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Sliders */}
+              <div style={{ flex: 1, marginLeft: '20px' }}>
+                <p>Adjust EV Adoption Rate: {evAdoptionRate}%</p>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={evAdoptionRate}
+                  onChange={(e) => setEvAdoptionRate(Number(e.target.value))}
+                  style={{ width: '100%' }}
+                />
+
+                <p style={{ marginTop: '10px' }}>Select Year: {selectedYear}</p>
+                <input
+                  type="range"
+                  min="1960"
+                  max="2050"
+                  value={selectedYear}
+                  onChange={handleYearChange}
+                  style={{ width: '100%' }}
+                />
+
+                {/* Conditional Note */}
+                {showEvMap && (selectedYear < 2010 || selectedYear > 2023) && (
+                  <p style={{ fontSize: '12px', color: 'red', marginTop: '5px' }}>
+                    Note: EV adoption data is only available for the years 2010–2023.
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section for Emissions Comparison Bar Chart and Line Chart */}
+        <div style={{ display: 'flex', marginTop: '60px', padding: '0 10px' }}>
+          {/* Emissions Comparison Bar Chart in Bottom-Left Corner */}
+          <div
+            style={{
+              flex: 1,
+              backgroundColor: 'white',
+              padding: '10px',
+              borderRadius: '8px',
+              boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+              marginRight: '10px',
+            }}
+          >
+            <h4>Emissions Comparison</h4>
+            <ResponsiveContainer width="100%" height={400}>
+              <BarChart data={barChartData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="country" />
+                <YAxis domain={[0, 60000]} label={{ value: 'Emissions (kt)', angle: -90, position: 'insideLeft' }} />
+                <Tooltip />
+                <Bar
+                  dataKey="emissions"
+                  name="Emissions"
+                  fill={({ payload }) => payload.fill} // Use the color specified in barChartData
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* Line Chart in Bottom-Right Corner */}
+          <div
+            style={{
+              flex: 1,
+              backgroundColor: 'white',
+              padding: '10px',
+              borderRadius: '8px',
+              boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+            }}
+          >
+            <h3 style={{ textAlign: 'center', marginBottom: '10px' }}>
+              CO2 Emissions Over Time
+            </h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <LineChart margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="year" domain={[1960, 2050]} type="number" label={{ value: 'Year', position: 'insideBottomRight', offset: -10 }} />
+                <YAxis domain={[0, 60000]} label={{ value: 'CO2 Emissions (kt)', angle: -90, position: 'insideLeft', dy: 10 }} />
+                <Tooltip />
+                <Line type="monotone" dataKey="emissions" data={countryEmissions} stroke="#8884d8" name={`${selectedCountry} Emissions`} />
+                <Line type="monotone" dataKey="adjustedEmissions" data={countryEmissions} stroke="#82ca9d" name={`${selectedCountry} Adjusted Emissions`} />
+                <Line type="monotone" dataKey="emissions" data={secondCountryEmissions} stroke="#ff7f0e" name={`${secondSelectedCountry} Emissions`} />
+                <Line type="monotone" dataKey="adjustedEmissions" data={secondSelectedCountry} stroke="#bcbd22" name={`${secondSelectedCountry} Adjusted Emissions`} />
+              </LineChart>
+            </ResponsiveContainer>
           </div>
         </div>
       </div>
-    </div>
+    )}
 
-    {/* Bottom Section for Emissions Comparison Bar Chart and Line Chart */}
-    <div style={{ display: 'flex', marginTop: '60px', padding: '0 10px' }}> {/* Increase top margin for bottom section */}
-      {/* Emissions Comparison Bar Chart in Bottom-Left Corner */}
-      <div style={{ flex: 1, backgroundColor: 'white', padding: '10px', borderRadius: '8px', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', marginRight: '10px' }}>
-        <h4>Emissions Comparison</h4>
-        <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={barChartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="country" />
-            <YAxis domain={[0, 60000]} label={{ value: 'Emissions (kt)', angle: -90, position: 'insideLeft' }} />
-            <Tooltip />
-            <Bar
-              dataKey="emissions"
-              name="Emissions"
-              fill={({ payload }) => payload.fill}  // Use the color specified in barChartData
-            />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-
-      {/* Line Chart in Bottom-Right Corner */}
-      <div style={{ flex: 1, backgroundColor: 'white', padding: '10px', borderRadius: '8px', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)' }}>
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart margin={{ top: 20, right: 30, left: 40, bottom: 30 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" domain={[1960, 2050]} type="number" label={{ value: 'Year', position: 'insideBottomRight', offset: -10 }} />
-            <YAxis domain={[0, 60000]} label={{ value: 'CO2 Emissions (kt)', angle: -90, position: 'insideLeft', dy: 10 }} />
-            <Tooltip />
-            <Line type="monotone" dataKey="emissions" data={countryEmissions} stroke="#8884d8" name={`${selectedCountry} Emissions`} />
-            <Line type="monotone" dataKey="adjustedEmissions" data={countryEmissions} stroke="#82ca9d" name={`${selectedCountry} Adjusted Emissions`} />
-            <Line type="monotone" dataKey="emissions" data={secondCountryEmissions} stroke="#ff7f0e" name={`${secondSelectedCountry} Emissions`} />
-            <Line type="monotone" dataKey="adjustedEmissions" data={secondCountryEmissions} stroke="#bcbd22" name={`${secondSelectedCountry} Adjusted Emissions`} />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-    </div>
+    {activeTab === 'sentiment' && <SentimentAnalysis />}
   </div>
 );
+
    
   
   
